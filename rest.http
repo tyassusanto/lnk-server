@@ -1,0 +1,14 @@
+GET http://localhost:3333
+
+
+### Register
+POST http://localhost:3333/auth/register
+
+### Login
+POST http://localhost:3333/auth/login
+
+### Refresh Token
+POST http://localhost:3333/auth/refresh-token
+
+### Logout
+DELETE  http://localhost:3333/auth/logout
