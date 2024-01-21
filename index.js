@@ -3,12 +3,18 @@ const morgan = require('morgan')
 const createError = require('http-errors')
 require('dotenv').config()
 require('./src/Helpers/connection')
+const { verifyAccessToken } = require('./src/Helpers/jwtHelper')
+require('./src/Helpers/redis')
 
 const app = express()
 app.use(morgan('dev'))
 app.use(express.json())
 
 const authRoutes = require('./src/Routes/authRoute')
+
+app.get('/', verifyAccessToken, async (req, res, next) => {
+    res.send('Hello from express.')
+})
 
 app.use('/auth', authRoutes)
 

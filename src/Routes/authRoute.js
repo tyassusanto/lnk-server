@@ -1,17 +1,12 @@
 const express = require('express')
 const  router = express.Router()
+const userControllers = require('../Controllers/userController')
 
-router.post('/register', (req, res, next) => {
-    res.send('Register Router')
-})
+router.post('/register', userControllers.register)
 
-router.post('/login', (req, res, next) => {
-    res.send('Login Router')
-})
+router.post('/login', userControllers.login)
 
-router.post('/refresh-token', (req, res, next) => {
-    res.send('Refresh Token Router')
-})
+router.post('/refresh-token', userControllers.refreshToken)
 
 router.delete('/Logout', (req, res, next) => {
     res.send('Logout Router')

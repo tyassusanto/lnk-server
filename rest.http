@@ -3,6 +3,9 @@ GET http://localhost:3333
 
 ### Register
 POST http://localhost:3333/auth/register
+Content-Type: application/json
+{
+}
 
 ### Login
 POST http://localhost:3333/auth/login
